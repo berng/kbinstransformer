@@ -34,7 +34,7 @@ class KBinsTransformer():
         X = X.reshape(-1, 1)
     out = np.empty(X.shape, dtype=float)
     for j, edges in enumerate(self.bin_edges_):
-        left=X[:, j].min()
+        left=self.X[j]
         out[:, j] = np.interp(
             X[:, j],
             edges,
